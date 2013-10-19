@@ -1,0 +1,74 @@
+#landing {
+    border:5px solid whitesmoke;
+    border-radius: 15px;
+    width:50%;
+    margin:100px auto;
+    padding: 20px;
+}
+
+#left {
+    width:70%;
+    font-size:x-large;
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+    margin: 1% 0 1% 1%;
+    color:white;
+    float:left;
+}
+
+#right {
+    float:right;
+    margin: 1% 1% 1% 0;
+    width: 130px;
+}
+
+
+
+.button {
+    width:80%;
+    border: 3px solid black;
+    background: #e1e4e6;
+    background: -webkit-gradient(linear, left top, left bottom, from(#e6e6e6), to(#e1e4e6));
+    background: -webkit-linear-gradient(top, #e6e6e6, #e1e4e6);
+    background: -moz-linear-gradient(top, #e6e6e6, #e1e4e6);
+    background: -ms-linear-gradient(top, #e6e6e6, #e1e4e6);
+    background: -o-linear-gradient(top, #e6e6e6, #e1e4e6);
+    padding: 8px 10px 10px 10px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: black;
+    font-size: x-large;
+    font-family: "Arial Rounded MT", "Helvetica Rounded", Arial, sans-serif;
+    text-decoration: none;
+    text-align: center;
+    height:30px;
+    margin:10px 0px 0px 0px;
+}
+.button:hover {
+    border-color: white;
+    background: #28597a;
+    color: whitesmoke;
+}
+.button:active {
+    border-color: #1b435e;
+    background: #1b435e;
+    text-decoration: none;
+}
+
+.button a:visited, a:hover, a:active, a:link {
+    text-decoration: none;
+}
+
+.clear {
+    height: 0;
+    font-size: 1px;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    clear: both;
+}
+

@@ -1,11 +1,28 @@
-<p>
-	Hello World! You have successfully spawned a new application.
-</p>
+<!-- log in/sign up prompt -->
 
-<p>
-	This message is being triggered via the c_index.php controller, within the index() method.
-</p>
+<div id = "landing">
+    <div id = "left">
+        Do you have thoughts?<br><br>
+        Enjoy typing stuff?
+        <br><br>
+        Start grunting now.
+    </div>
 
-<p>
-	<strong>Since everything is in working order, you should now delete <?php echo APP_PATH?>diagnostics.php</strong>
-</p>
+    <!-- buttons -->
+    <div id = "right">
+
+        <!-- made hypertextual -->
+        <a href = "/users/signup">
+            <div class = "button">
+                Sign Up
+            </div>
+        </a>
+
+        <a href="/users/login">
+            <div class = "button">
+                Login
+            </div>
+        </a>
+    </div>
+    <div class = "clear"></div>
+</div>
