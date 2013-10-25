@@ -23,11 +23,27 @@ body {
     font-family: arial;
     font-weight: 900;
     font-size:2em;
+
 }
 
 #header a:visited, a:hover, a:active, a:link {
     text-decoration: none;
     color:black;
+    float:left;
+    padding-right: 15px;
+
+}
+
+#header img {
+    float:right;
+    padding-right: 30px;
+
+}
+
+#header #menu {
+    font-weight:100;
+    float:right;
+    font-size: .75em;
 }
 
 /* CSS for the content of page.

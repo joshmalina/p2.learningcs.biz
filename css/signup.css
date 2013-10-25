@@ -1,3 +1,8 @@
+/* this document governs css for both v_users_signup.php and v_users_p_signup.php */
+
+/* signup */
+
+
 .form {
     color:white;
     padding:10px;
@@ -8,4 +13,12 @@
 
 label {
     font-size: small;
+}
+
+/* p_signup */
+
+#signed_up {
+    color:white;
+    font-family:Arial, sans-serif;
+
 }

@@ -18,7 +18,24 @@
     <!-- BEGIN: Sticky Header -->
     <div id="header_container">
         <div id="header">
+        <img src="/images/fat_mule.png" alt="" height="" width="62">
         <a href = "/">gruntr</a> <!-- the best way to let people know that things are happening to you -->
+
+            <div id='menu'>
+                <!-- Menu for users who are logged in -->
+                <?php if($user): ?>
+
+                    <a href='users/logout'>Logout</a>
+                    <a href='users/profile'>Profile</a>
+
+                <!-- Menu options for users who are not logged in -->
+                <?php else: ?>
+
+                    <a href='users/signup'>Sign up</a>
+                    <a href='users/login'>Log in</a>
+
+                <?php endif; ?>
+            </div>
         </div>
     </div>
     <!-- END: Sticky Header -->

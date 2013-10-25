@@ -3,7 +3,7 @@ class users_controller extends base_controller {
 
     public function __construct() {
         parent::__construct();
-        echo "users_controller construct called<br><br>";
+        //echo "users_controller construct called<br><br>";
     } 
 
     public function index() {
@@ -40,16 +40,37 @@ class users_controller extends base_controller {
         // this is how we actually get our data into the database
         $user_id = DB::instance(DB_NAME)->insert('users', $_POST);
 
-        echo "Thank you for signing up!";
+        # CSS/JS includes
+
+        $client_files_head = Array(
+            '/css/signup.css'
+        );
+        $this->template->client_files_head = Utils::load_client_files($client_files_head);
+
+        $this->template->content = View::instance('v_users_p_signup');
+        $this->template->title = "Signed Up";
+
+        echo $this->template;
+
     }
 
-    public function login() {
+    public function login($error = NULL) {
 
         // set up view
         $this->template->content = View::instance('v_users_login');
 
         // title
         $this->template->title = "Login";
+
+        // pass error
+        $this->template->content->error = $error;
+
+        // CSS
+        $client_files_head = Array(
+            '/css/signup.css'
+        );
+
+        $this->template->client_files_head = Utils::load_client_files($client_files_head);
 
         // render template
 
@@ -71,8 +92,7 @@ class users_controller extends base_controller {
 
         if(!$token) {
 
-            Router::redirect("/users/login");
-
+            Router::redirect("/users/login/error");
 
         } else {
 
@@ -85,15 +105,40 @@ class users_controller extends base_controller {
     }
 
     public function logout() {
-        echo "This is the logout page";
+
+        # Generate and save a new token for next login
+        $new_token = sha1(TOKEN_SALT.$this->user->email.Utils::generate_random_string());
+
+        // prepare data field to be updated with new token
+        $data = Array("token" => $new_token);
+
+        // actually update database
+        DB::instance(DB_NAME)->update("users", $data, "WHERE token = '".$this->user->token."'");
+
+        // delete token cookie by setting to a time in the past, logging them out
+        setcookie("token", "", strtotime('-1 year'), '/');
+
+        // send them back home
+        Router::redirect("/");
+
+
+
     }
 
 	// these function names feature in our url, and what comes after them, their arguments
     public function profile($user_name = NULL) {
 
+        // is user is not logged in, redirect to login
+        if(!$this->user) {
+            Router::redirect('/users/login');
+        }
+
+        // setup view
         $this->template->content = View::instance('v_users_profile');
         $this->template->title = "Profile";
         $this->template->content->user_name = $user_name;
+
+        // render template
         echo $this->template;
 
     }

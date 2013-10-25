@@ -1,15 +1,25 @@
-<form method = "POST" action = "/users/p_login">
+<div class = "form">
+    Login<br><br>
+    <form method = "POST" action = "/users/p_login">
 
-    Email<br>
-    <input type="text" name="email">
+        <label for "email">Email</label><br>
+        <input type="text" name="email">
 
-    <br><br>
+        <br><br>
 
-    Password<br>
-    <input type="password" name="password">
+        <label for "password">Password</label><br>
+        <input type="password" name="password">
 
-    <br><br>
+        <br><br>
 
-    <input type="submit" value="Log in">
+        <?php if(isset($error)): ?>
+            <div class='error'>
+                You were not logged in. Please double check your email and password.
+            </div>
+            <br>
+        <?php endif ?>
 
-</form>
+        <input type="submit" value="Log in">
+
+    </form>
+</div>
