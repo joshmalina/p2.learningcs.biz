@@ -138,6 +138,15 @@ class users_controller extends base_controller {
         $this->template->title = "Profile";
         $this->template->content->user_name = $user_name;
 
+
+        # CSS/JS includes
+
+        $client_files_head = Array(
+            '/css/profile.css'
+        );
+        $this->template->client_files_head = Utils::load_client_files($client_files_head);
+
+
         // render template
         echo $this->template;
 

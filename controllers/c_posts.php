@@ -53,6 +53,9 @@
         $this->template->content = View::instance('v_posts_index');
         $this->template->title   = "All Posts";
 
+        # Setup another view in the profile page
+        $this->template->content = View::instance('v_users_profile');
+
         # Query
         $q = 'SELECT
         posts.content,
@@ -85,6 +88,10 @@
 
         # Setup view
         $this->template->content = View::instance('v_posts_add');
+
+        # Setup another view in the profile page
+        $this->template->content = View::instance('v_users_profile');
+
         $this->template->title   = "New Post";
 
         # Render template
