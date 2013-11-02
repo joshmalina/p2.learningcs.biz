@@ -1,32 +1,30 @@
 <div class = "form" >
     Sign up to start grunting.
 
+    <br><br><label>*Fields marked with an asterisk are required.</label>
+
     <br><br>
-    <form method = 'POST' action = '/users/p_signup'>
+    <form method = 'POST' action = '/users/signup'>
 
         <label for "first_name">First Name*</label><br>
-        <input type="text" name="first_name">
-        <br><br>
+        <input type="text" name="first_name" value="<?php echo $_POST['first_name'];?>"
+        <br><br><br>
 
         <label for "last_name">Last Name</label><br>
-        <input type="text" name="last_name">
+        <input type="text" name="last_name" value="<?php echo $_POST['last_name'];?>">
         <br><br>
 
         <label for "Email">Email*</label><br>
-        <input type="text" name="email">
+        <input type="text" name="email" value="<?php echo $_POST['email'];?>">
         <br><br>
 
         <label for "password">Password*</label><br>
         <input type="password" name="password">
         <br><br>
 
-        <label for "password">Confirm Password*</label><br>
-        <!-- <input type="password" name="confirm_password"> -->
+        <input type="submit" value="Sign up"><br><br>
 
-        <br><br><label>*Fields marked with an asterisk are required.</label><br><br>
-
-        <input type="submit" value="Sign up">
-
+        <?php if(isset($error)) echo $error; ?>
 
     </form>
 </div>

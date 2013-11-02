@@ -18,11 +18,6 @@ class users_controller extends base_controller {
         $this->template->content = View::instance('v_users_signup');
         $this->template->title = "Sign Up";
 
-        $errors_array = array("dogs", "cats", $_POST['first_name']);
-
-        //Pass data to the view
-        $this->template->content->errors_array = $errors_array;
-
         # CSS/JS includes
 
         $client_files_head = Array(
@@ -32,69 +27,38 @@ class users_controller extends base_controller {
         // these client files are the css
         $this->template->client_files_head = Utils::load_client_files($client_files_head);
 
-        // sending the actual content
-        echo $this->template;
-
-    }
-
-    public function p_signup() {
-
-        /*// using an input and validate class from library
-        if (Input::exists()) {
-            $validate = new Validate();
-            $validation = $validation->check($_POST, array(
-                'first_name' => array(
-                    'required'  => true,
-                    'min'       => 1,
-                    'max'       => 20,
-                ),
-                'last_name' => array(
-                    'required'  => false,
-                    'min'       => 0,
-                    'max'       => 20,
-                ),
-                'email' => array(
-                    'required'  => true,
-                    'min'       => 5,
-                    'max'       => 50,
-                    // make sure that this email has not already been registered
-                    'unique'    => 'email'
-                ),
-                'password' => array(
-                    'required'  => true,
-                    // make sure that passwords are at least six characters long
-                    'min'       => 6,
-
-                // when up and running, maybe include password_again for checking
-                )
-
-            ));
-
-            if ($validation->passed()) {
-                // register user
-            } else {
-                //output errors
-            }
-
-
-        }*/
-
         # ERROR CHECKING
 
-            $errors_array = array();
+            $error = false;
 
-            # keep track of total number of errors
-            $signup_errors = 0;
+            // if all fields are empty
+            if(!$_POST) {
+                echo $this->template;
+                return;
+            }
+
 
             # check for already used email address
             $q = "SELECT email FROM users WHERE email = '".$_POST['email']."'";
             $email_used = DB::instance(DB_NAME)->select_rows($q);
             $email_used = count($email_used);
 
+            # check to see if password is too short
+            if (strlen($_POST['password']) < 7)
+            {
+                $this->template->content->error = "Your password must be at least six characters.<br>";
+                $error = true;
+
+            }
+
+
             if ($email_used > 0)
             {
-                $errors_array[] = "The email inputted has already been registered.";
-                $signup_errors++;
+                // $errors_array[] = "The email inputted has already been registered.";
+                // $signup_errors++;
+                $this->template->content->error = "The email inputted has already been registered.<br>";
+                $error = true;
+
             }
 
             # required fields
@@ -104,61 +68,41 @@ class users_controller extends base_controller {
             foreach ($required_fields as $required_field)
             {
                 // if those required fields have not been filled out
-                if (!isset($required_field))
+                if (empty($required_field))
                 {
-                    $signup_errors++;
-                    $errors_array[] = "At least one required field is empty.";
+                    $this->template->content->error = "At least one required field is empty.<br>";
+                    $error = true;
                 }
             }
 
-            # check to see if password is too short
-            if (strlen($_POST['password']) < 7)
+
+
+            # if no errors, enter into DB and redirect
+            if (!$error)
             {
-                $errors_array[] = "Your password must be at least six characters.";
-                $signup_errors++;
+                // entries for respective data fields
+                $_POST['created']   = Time::now();
+                $_POST['modified']  = Time::now();
+
+                // encrypt the password
+                $_POST['password']  = sha1(PASSWORD_SALT.$_POST['password']);
+
+                // encrypt the token
+                $_POST['token']     = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
+
+                // this is how we actually get our data into the database
+                $user_id = DB::instance(DB_NAME)->insert('users', $_POST);
+
+                // redirect somewhere
+                Router::redirect('/');
+
             }
 
-            # if any errors, report to user
-            if ($signup_errors > 0)
-            {
-                Router::redirect('/users/signup/error');
-
+            else {
+                echo $this->template;
             }
 
         # END ERROR CHECKING
-
-        // entries for respective data fields
-        $_POST['created']   = Time::now();
-        $_POST['modified']  = Time::now();
-
-        // encrypt the password
-        $_POST['password']  = sha1(PASSWORD_SALT.$_POST['password']);
-
-        // encrypt the token
-        $_POST['token']     = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
-
-        // this is how we actually get our data into the database
-        $user_id = DB::instance(DB_NAME)->insert('users', $_POST);
-
-
-        # CSS/JS includes
-
-        // what files we want to include
-        $client_files_head = Array(
-            '/css/signup.css'
-        );
-
-        // getting those files actually included
-        $this->template->client_files_head = Utils::load_client_files($client_files_head);
-
-        // setting up the view
-        $this->template->content = View::instance('v_users_p_signup');
-
-        // defining the title
-        $this->template->title = "Signed Up";
-
-        // sending the content
-        echo $this->template;
 
     }
 
