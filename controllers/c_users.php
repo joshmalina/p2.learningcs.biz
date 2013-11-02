@@ -18,6 +18,11 @@ class users_controller extends base_controller {
         $this->template->content = View::instance('v_users_signup');
         $this->template->title = "Sign Up";
 
+        $errors_array = array("dogs", "cats", $_POST['first_name']);
+
+        //Pass data to the view
+        $this->template->content->errors_array = $errors_array;
+
         # CSS/JS includes
 
         $client_files_head = Array(
@@ -34,6 +39,46 @@ class users_controller extends base_controller {
 
     public function p_signup() {
 
+        /*// using an input and validate class from library
+        if (Input::exists()) {
+            $validate = new Validate();
+            $validation = $validation->check($_POST, array(
+                'first_name' => array(
+                    'required'  => true,
+                    'min'       => 1,
+                    'max'       => 20,
+                ),
+                'last_name' => array(
+                    'required'  => false,
+                    'min'       => 0,
+                    'max'       => 20,
+                ),
+                'email' => array(
+                    'required'  => true,
+                    'min'       => 5,
+                    'max'       => 50,
+                    // make sure that this email has not already been registered
+                    'unique'    => 'email'
+                ),
+                'password' => array(
+                    'required'  => true,
+                    // make sure that passwords are at least six characters long
+                    'min'       => 6,
+
+                // when up and running, maybe include password_again for checking
+                )
+
+            ));
+
+            if ($validation->passed()) {
+                // register user
+            } else {
+                //output errors
+            }
+
+
+        }*/
+
         # ERROR CHECKING
 
             $errors_array = array();
@@ -45,6 +90,12 @@ class users_controller extends base_controller {
             $q = "SELECT email FROM users WHERE email = '".$_POST['email']."'";
             $email_used = DB::instance(DB_NAME)->select_rows($q);
             $email_used = count($email_used);
+
+            if ($email_used > 0)
+            {
+                $errors_array[] = "The email inputted has already been registered.";
+                $signup_errors++;
+            }
 
             # required fields
             $required_fields = array($_POST['first_name'], $_POST['email'], $_POST['password']);
@@ -60,17 +111,18 @@ class users_controller extends base_controller {
                 }
             }
 
+            # check to see if password is too short
             if (strlen($_POST['password']) < 7)
             {
                 $errors_array[] = "Your password must be at least six characters.";
                 $signup_errors++;
             }
 
-
-            if ($email_used > 0)
+            # if any errors, report to user
+            if ($signup_errors > 0)
             {
-                $errors_array[] = "The email inputted has already been registered.";
-                $signup_errors++;
+                Router::redirect('/users/signup/error');
+
             }
 
         # END ERROR CHECKING
@@ -84,8 +136,6 @@ class users_controller extends base_controller {
 
         // encrypt the token
         $_POST['token']     = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
-
-        // $this->template->content->errors->errors_array = $errors_array;
 
         // this is how we actually get our data into the database
         $user_id = DB::instance(DB_NAME)->insert('users', $_POST);
