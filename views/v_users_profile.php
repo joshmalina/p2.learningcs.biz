@@ -2,12 +2,29 @@
     <div class = "left">
         <div id = "left_top">
             I am <?=$user->first_name?>.<br>
-            I have been grunting since x.<br>
-            I have grunted x many times.<br>
+            I have been grunting since <?=$joined?>.<br>
+            I have grunted <?=$post_num?> many times.<br>
             I follow x, y, and z.<br>
         </div>
         <div id = "left_mid">
-            // toggle follow/unfollow
+            <!-- toggle follow/unfollow -->
+            <?php foreach($users as $user): ?>
+
+                <!-- Print this user's name -->
+                <?=$user['first_name']?> <?=$user['last_name']?>
+
+                <!-- If there exists a connection with this user, show a unfollow link -->
+                <?php if(isset($connections[$user['user_id']])): ?>
+                    <a href='/posts/unfollow/<?=$user['user_id']?>'>Unfollow</a>
+
+                    <!-- Otherwise, show the follow link -->
+                <?php else: ?>
+                    <a href='/posts/follow/<?=$user['user_id']?>'>Follow</a>
+                <?php endif; ?>
+
+                <br><br>
+
+            <?php endforeach; ?>
         </div>
     </div>
     <div class = "center">
@@ -15,21 +32,18 @@
         <!-- add post box -->
         <div id = "center_top">
             <form method='POST' action='/posts/p_add'>
-                    <textarea name='content' id='content' placeholder="<?php for ($i = 0; $i < 1; $i++) { echo 'Grunt Here' ;}?>" rows="8" cols="80"></textarea>
-                    <div id = "blank" style="float:left;">I'd like to push this =></div>
-                    <input type='submit' value='GRUNT' style="margin-left:0px;">
+                    <textarea name='content' id='content' placeholder="Grunt Here" rows="8" cols="83"></textarea>
+                    <input type='submit' value='GRUNT' style="width:100px;margin:auto;">
 
             </form>
         </div>
         <div id = "center_mid">
-            // grunts
+            <!-- grunts -->
             <?php foreach($posts as $post): ?>
 
                 <article>
 
-                    <h1><?=$post['first_name']?> <?=$post['last_name']?> posted:</h1>
-
-                    <p><?=$post['content']?></p>
+                    <h1><?=$post['first_name']?> <?=$post['last_name']?>: <label = "post"><?=$post['content']?></label></h1>
 
                     <time datetime="<?=Time::display($post['created'],'Y-m-d G:i')?>">
                         <?=Time::display($post['created'])?>

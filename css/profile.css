@@ -29,6 +29,7 @@ body {
 
 /* follow toggle */
 #left_mid {
+    font-size: 1em;
 
 
 
@@ -36,7 +37,7 @@ body {
 
 /* add post box */
 #center_top {
-
+    text-align: center;
 
 }
 
@@ -47,5 +48,10 @@ input:-moz-placeholder { font-size:7em; text-align: center; }
 
 /* grunts */
 #center_mid {
+    font-size: 1em;
 
+}
+
+label {
+    font-weight:100;
 }

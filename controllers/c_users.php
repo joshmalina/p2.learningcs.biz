@@ -1,4 +1,7 @@
 <?php
+/*
+ * This file controls user functions including signup, login, and the profile
+ */
 class users_controller extends base_controller {
 
     public function __construct() {
@@ -20,14 +23,59 @@ class users_controller extends base_controller {
         $client_files_head = Array(
             '/css/signup.css'
         );
+
+        // these client files are the css
         $this->template->client_files_head = Utils::load_client_files($client_files_head);
 
+        // sending the actual content
         echo $this->template;
 
     }
 
     public function p_signup() {
 
+        # ERROR CHECKING
+
+            $errors_array = array();
+
+            # keep track of total number of errors
+            $signup_errors = 0;
+
+            # check for already used email address
+            $q = "SELECT email FROM users WHERE email = '".$_POST['email']."'";
+            $email_used = DB::instance(DB_NAME)->select_rows($q);
+            $email_used = count($email_used);
+
+            # required fields
+            $required_fields = array($_POST['first_name'], $_POST['email'], $_POST['password']);
+
+            # check for empty required fields
+            foreach ($required_fields as $required_field)
+            {
+                // if those required fields have not been filled out
+                if (!isset($required_field))
+                {
+                    $signup_errors++;
+                    $errors_array[] = "At least one required field is empty.";
+                }
+            }
+
+            if (strlen($_POST['password']) < 7)
+            {
+                $errors_array[] = "Your password must be at least six characters.";
+                $signup_errors++;
+            }
+
+
+            if ($email_used > 0)
+            {
+                $errors_array[] = "The email inputted has already been registered.";
+                $signup_errors++;
+            }
+
+        # END ERROR CHECKING
+
+        // entries for respective data fields
         $_POST['created']   = Time::now();
         $_POST['modified']  = Time::now();
 
@@ -37,19 +85,29 @@ class users_controller extends base_controller {
         // encrypt the token
         $_POST['token']     = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
 
+        // $this->template->content->errors->errors_array = $errors_array;
+
         // this is how we actually get our data into the database
         $user_id = DB::instance(DB_NAME)->insert('users', $_POST);
 
+
         # CSS/JS includes
 
+        // what files we want to include
         $client_files_head = Array(
             '/css/signup.css'
         );
+
+        // getting those files actually included
         $this->template->client_files_head = Utils::load_client_files($client_files_head);
 
+        // setting up the view
         $this->template->content = View::instance('v_users_p_signup');
+
+        // defining the title
         $this->template->title = "Signed Up";
 
+        // sending the content
         echo $this->template;
 
     }
@@ -139,13 +197,37 @@ class users_controller extends base_controller {
         $this->template->content->user_name = $user_name;
 
 
+        // from our Post library file, to list all the posts from members that this user follows
+        $this->template->content->posts = Post::posts_from_users_followed($this->user->user_id);
+
+        // also from Post library file, to get all users
+        $this->template->content->users = Post::get_all_users();
+
+        // also from Post library file, to get all users so that they can be toggled for follow/unfollow
+        $this->template->content->connections = Post::follow_unfollow($this->user->user_id);
+
+        # when user joined
+        $q = "SELECT created FROM users WHERE user_id = ".$this->user->user_id;
+        $joined = DB::instance(DB_NAME)->select_field($q);
+        $joined = date('Y', strtotime($joined));
+
+        # pass to view
+        $this->template->content->joined = $joined;
+
+        # total number of grunts
+        $q = "SELECT post_id FROM posts WHERE user_id = ".$this->user->user_id;
+        $post_num = DB::instance(DB_NAME)->select_rows($q);
+
+        $post_num = count($post_num);
+
+        $this->template->content->post_num = $post_num;
+
         # CSS/JS includes
 
         $client_files_head = Array(
             '/css/profile.css'
         );
         $this->template->client_files_head = Utils::load_client_files($client_files_head);
-
 
         // render template
         echo $this->template;

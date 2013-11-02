@@ -23,6 +23,17 @@
         <label for "password">Confirm Password*</label><br>
         <!-- <input type="password" name="confirm_password"> -->
 
+        <?php if(!empty($errors_array)): ?>
+            <div class='error'>
+                <?php foreach ($errors_array as $error)
+                {
+                    echo $error . "<br>";
+                }
+                ?>
+            </div>
+            <br>
+        <?php endif ?>
+
         <br><br><label>*Fields marked with an asterisk are required.</label><br><br>
 
         <input type="submit" value="Sign up">

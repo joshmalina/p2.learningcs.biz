@@ -53,9 +53,6 @@
         $this->template->content = View::instance('v_posts_index');
         $this->template->title   = "All Posts";
 
-        # Setup another view in the profile page
-        $this->template->content = View::instance('v_users_profile');
-
         # Query
         $q = 'SELECT
         posts.content,
@@ -113,7 +110,10 @@
         DB::instance(DB_NAME)->insert('posts', $_POST);
 
         # Quick and dirty feedback
-        echo "Your post has been added. <a href='/posts/add'>Add another</a>";
+        //echo "Your post has been added. <a href='/posts/add'>Add another</a>";
+
+        # Send them back
+        Router::redirect("/users/profile");
 
     }
 
