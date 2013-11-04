@@ -33,18 +33,6 @@ class index_controller extends base_controller {
 			echo $this->template;
 
 	} # End of method
-
-    // controller for plus_one view
-    public function additional_features() {
-        $this->template->content = View::instance('v_additional_features');
-        $this->template->title = "+1";
-        $client_files_head = Array(
-            '/css/plus_one.css'
-        );
-        $this->template->client_files_head = Utils::load_client_files($client_files_head);
-        echo $this->template;
-
-    } # End of method
 	
 	
 } # End of class
