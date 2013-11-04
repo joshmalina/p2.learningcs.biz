@@ -1,5 +1,5 @@
 <div class = "extra_features">
-    <ul><h3>Plus Ones</h3></ul>
+    <ul><h3>Plus Ones</h3><ul>
     <ul>
         <h4>signup form validation</h4>
         <dd>required fields</dd>
