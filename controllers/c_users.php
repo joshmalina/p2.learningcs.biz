@@ -29,7 +29,9 @@ class users_controller extends base_controller {
 
         # ERROR CHECKING
 
-            $error = false;
+        $_POST = DB::instance(DB_NAME)->sanitize($_POST);
+
+        $error = false;
 
             // if all fields are empty
             if(!$_POST) {
@@ -44,7 +46,7 @@ class users_controller extends base_controller {
             }
 
             # check to see if password is too short
-            if (strlen($_POST['password']) < 7)
+            if (strlen($_POST['password']) < 6)
             {
                 $this->template->content->error = "Your password must be at least six characters.<br>";
                 $error = true;
@@ -167,6 +169,9 @@ class users_controller extends base_controller {
 
         if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !empty($_GET['hash'])){
             // Verify data
+
+            $_GET = DB::instance(DB_NAME)->sanitize($_GET);
+
             $email = ($_GET['email']); // Set email variable -- not sanitized against
             $hash = ($_GET['hash']); // Set hash variable -- not sanitized
 
