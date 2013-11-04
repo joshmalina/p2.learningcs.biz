@@ -18,7 +18,7 @@
     <!-- BEGIN: Sticky Header -->
     <div id="header_container">
         <div id="header">
-        <img src="/images/fat_mule.png" alt="" height="" width="62">
+        <img src="/images/fat_mule.png" alt="logo" width="62">
         <a href = "/">gruntr</a> <!-- the best way to let people know that things are happening to you -->
 
             <div id='menu'>
