@@ -128,15 +128,13 @@ class users_controller extends base_controller {
                 # You can set the body as just a string of text
                 $body = "Hi " . $_POST['first_name'].", thank you for signing up at Gruntr. You are almost finished! ";
                 $body .= "Please click the link below to confirm your registration ";
-                $body .= 'p2.learningcs.biz/users/email_signup_verification?email='.$_POST['email'].'&hash='.$_POST['verify_hash'].'
-
-                '; // Our message above including the link
+                $body .= 'p2.learningcs.biz/users/email_signup_verification?email='.$_POST['email'].'&hash='.$_POST['verify_hash'].''; // Our message above including the link
 
                 # Build multi-dimension arrays of name / email pairs for cc / bcc if you want to
                 $bcc = "info@laoshilist.com";
 
                 # With everything set, send the email
-                $email = Email::send($to, $from, $subject, $body, true, $bcc);
+                $email = Email::send($to, $from, $subject, $body, true);
 
             // redirect to success page
             Router::redirect('/users/signup_success');
