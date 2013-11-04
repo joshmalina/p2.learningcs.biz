@@ -6,12 +6,13 @@ class users_controller extends base_controller {
 
     public function __construct() {
         parent::__construct();
-        //echo "users_controller construct called<br><br>";
-    } 
+
+    } # eof
 
     public function index() {
         echo "This is the index page";
-    }
+
+    } # eof
 
     public function signup() {
 
@@ -149,7 +150,7 @@ class users_controller extends base_controller {
         }
 
 
-    }
+    } # eof
 
     // this function sends information to a view that tells the user to check their email for an account activation
     public function signup_success() {
@@ -157,7 +158,7 @@ class users_controller extends base_controller {
         $this->template->title = "Signup Almost Complete";
         echo $this->template;
 
-    }
+    } # eof
 
     public function email_signup_verification($message = NULL) {
 
@@ -197,7 +198,7 @@ class users_controller extends base_controller {
             echo $this->template->content->message = "Invalid approach, please use the link that has been send to your email.";
         }
 
-    }
+    } # eof
 
     public function login($error = NULL) {
 
@@ -215,12 +216,13 @@ class users_controller extends base_controller {
             '/css/signup.css'
         );
 
+        // include css file
         $this->template->client_files_head = Utils::load_client_files($client_files_head);
 
         // render template
-
         echo $this->template;
-    }
+
+    } # eof
 
     public function p_login() {
 
@@ -230,15 +232,16 @@ class users_controller extends base_controller {
         // hash submitted password
         $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
 
+        // make sure user has verified account
         $sql = "SELECT * FROM users WHERE verified = 1 AND email = '".$_POST['email']."'";
         $verify = DB::instance(DB_NAME)->select_row($sql);
 
-
         // search db for email/password, return token if available
         $q = "SELECT token FROM users WHERE email = '".$_POST['email']."' AND password = '".$_POST['password']."'";
-
         $token = DB::instance(DB_NAME)->select_field($q);
 
+
+        // if email and username do not agree
         if(!$token) {
 
             Router::redirect("/users/login/email_username_mismatch");
@@ -252,17 +255,18 @@ class users_controller extends base_controller {
 
             } else {
 
-                // last parameter says cookie should be available everywhere in the application
+                // allow them to login
+                // note: last parameter makes cookie available everywhere in the application
                 setcookie("token", $token, strtotime('+1 year'), '/');
 
+                // redirect to home
                 Router::redirect("/");
 
             }
 
-
         }
 
-    }
+    } # eof
 
     public function logout() {
 
@@ -281,11 +285,8 @@ class users_controller extends base_controller {
         // send them back home
         Router::redirect("/");
 
+    } # eof
 
-
-    }
-
-	// these function names feature in our url, and what comes after them, their arguments
     public function profile($user_name = NULL) {
 
         // is user is not logged in, redirect to login
@@ -297,7 +298,6 @@ class users_controller extends base_controller {
         $this->template->content = View::instance('v_users_profile');
         $this->template->title = "Profile";
         $this->template->content->user_name = $user_name;
-
 
         // from our Post library file, to list all the posts from members that this user follows
         $this->template->content->posts = Post::posts_from_users_followed($this->user->user_id);
@@ -311,9 +311,9 @@ class users_controller extends base_controller {
         # total number of grunts
         $q = "SELECT post_id FROM posts WHERE user_id = ".$this->user->user_id;
         $post_num = DB::instance(DB_NAME)->select_rows($q);
-
         $post_num = count($post_num);
 
+        // send to view
         $this->template->content->post_num = $post_num;
 
         # CSS/JS includes
@@ -321,13 +321,15 @@ class users_controller extends base_controller {
         $client_files_head = Array(
             '/css/profile.css'
         );
+
         $this->template->client_files_head = Utils::load_client_files($client_files_head);
 
         // render template
         echo $this->template;
 
-    }
+    } # eof
 
+    // make sure email is written in the expected format
     public static function verify_email($email){
 
         if(!preg_match('/^[_A-z0-9-]+((\.|\+)[_A-z0-9-]+)*@[A-z0-9-]+(\.[A-z0-9-]+)*(\.[A-z]{2,4})$/',$email)){

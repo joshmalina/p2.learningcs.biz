@@ -1,11 +1,17 @@
 <?php if($user): ?>
     <div class = "left">
+
+        <!-- profile info box -->
+
         <div id = "left_top">
             I am <?=$user->first_name?>.<br>
             I have grunted <?=$post_num?> time<?php if($post_num != 1) echo "s";?>.<br>
         </div>
+
+        <!-- follow/unfollow box -->
+
         <div id = "left_mid">
-            <!-- toggle follow/unfollow -->
+
             <?php foreach($users as $user): ?>
 
                 <!-- Print this user's name -->
@@ -25,18 +31,25 @@
             <?php endforeach; ?>
         </div>
     </div>
+
+
     <div class = "center">
 
         <!-- add post box -->
+
         <div id = "center_top">
+
             <form method='POST' action='/posts/p_add'>
-                    <textarea name='content' id='content' placeholder="Grunt Here" rows="8" cols="83"></textarea>
+                    <textarea name='content' id='content' placeholder="Grunt Here" rows="8" cols="75"></textarea>
                     <input type='submit' value='GRUNT' style="width:100px;margin:auto;">
 
             </form>
         </div>
+
         <div id = "center_mid">
+
             <!-- grunts -->
+
             <?php foreach($posts as $post): ?>
 
                 <article>
@@ -53,9 +66,5 @@
         </div>
     </div>
 
-
-
-<?php else:?>
-    <h1>This shouldn't be seen.</h1>
 <?php endif;?>
 

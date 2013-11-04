@@ -103,14 +103,15 @@
         $_POST['created']  = Time::now();
         $_POST['modified'] = Time::now();
 
-        # Insert
-        # Note we didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
-        DB::instance(DB_NAME)->insert('posts', $_POST);
+        // enter something into post box before submitting to database
+        if (!empty($_POST['content']))
+        {
+            # Insert
+            # Note we didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
+            DB::instance(DB_NAME)->insert('posts', $_POST);
+        }
 
-        # Quick and dirty feedback
-        //echo "Your post has been added. <a href='/posts/add'>Add another</a>";
-
-        # Send them back
+        # return to profile
         Router::redirect("/users/profile");
 
     }

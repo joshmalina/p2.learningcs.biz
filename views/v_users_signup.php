@@ -1,5 +1,3 @@
-
-
     <div class = "form" >
 
         Sign up to start grunting.
