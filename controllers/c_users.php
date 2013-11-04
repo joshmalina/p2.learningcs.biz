@@ -324,4 +324,13 @@ class users_controller extends base_controller {
 
     }
 
+    public static function verify_email($email){
+
+        if(!preg_match('/^[_A-z0-9-]+((\.|\+)[_A-z0-9-]+)*@[A-z0-9-]+(\.[A-z0-9-]+)*(\.[A-z]{2,4})$/',$email)){
+            return false;
+        } else {
+            return $email;
+        }
+    } # eof
+
 } # end of the class
