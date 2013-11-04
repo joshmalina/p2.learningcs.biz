@@ -35,7 +35,7 @@
         </a>
         <?php else: ?>
         <a href = "/users/profile">
-            <img src="/images/white_fat_mule.png" alt="" height="" width="122">
+            <img src="/images/white_fat_mule.png" alt="logo" height="" width="122">
         </a>
         <?php endif; ?>
 

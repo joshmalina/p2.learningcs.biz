@@ -2,7 +2,7 @@
     <div class = "left">
         <div id = "left_top">
             I am <?=$user->first_name?>.<br>
-            I have grunted <?=$post_num?> times.<br>
+            I have grunted <?=$post_num?> time<?php if($post_num > 1) echo "s";?>.<br>
         </div>
         <div id = "left_mid">
             <!-- toggle follow/unfollow -->
