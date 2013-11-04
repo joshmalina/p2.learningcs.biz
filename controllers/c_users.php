@@ -10,7 +10,7 @@ class users_controller extends base_controller {
     } # eof
 
     public function index() {
-        echo "This is the index page";
+        Router::redirect('/');
 
     } # eof
 
