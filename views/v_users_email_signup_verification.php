@@ -1,2 +1,7 @@
-<!-- some message should be here but it is currently in the controller -->
-
+<style>
+    body {
+        text-align: center;
+        font-family: arial;
+        color:white;
+    }
+</style>

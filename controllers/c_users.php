@@ -127,7 +127,7 @@ class users_controller extends base_controller {
 
                 # You can set the body as just a string of text
                 $body = "Hi " . $_POST['first_name'].", thank you for signing up at Gruntr. You are almost finished! ";
-                $body .= "Please click the link below to confirm your registration ";
+                $body .= "Please click the link below to confirm your registration: ";
                 $body .= 'p2.learningcs.biz/users/email_signup_verification?email='.$_POST['email'].'&hash='.$_POST['verify_hash'].''; // Our message above including the link
 
                 # Build multi-dimension arrays of name / email pairs for cc / bcc if you want to
@@ -157,11 +157,13 @@ class users_controller extends base_controller {
 
     }
 
-    public function email_signup_verification() {
+    public function email_signup_verification($message = NULL) {
 
         $this->template->content = View::instance('v_users_email_signup_verification');
         $this->template->title = "Verify Your Email";
         echo $this->template;
+        $this->template->content->message = $message;
+
 
         if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !empty($_GET['hash'])){
             // Verify data
@@ -176,16 +178,18 @@ class users_controller extends base_controller {
 
                 $q = array('verified' => 1);
                 $verify_user = DB::instance(DB_NAME)->update('users', $q, "WHERE email='".$email."' AND verify_hash='".$hash."' AND verified='0'");
-                echo '<div class="statusmsg">Your account has been activated, you can now login</div>';
+                echo $this->template->content->message = "Your account has been activated, you can now login";
 
-            }else{
+            } else {
                 // No match -> invalid url or account has already been activated.
-                echo '<div class="statusmsg">The url is either invalid or you already have activated your account.</div>';
+                echo $this->template->content->message = "The url is either invalid or you already have activated your account.";
+
+
             }
 
         }else{
             // Invalid approach
-            echo '<div class="statusmsg">Invalid approach, please use the link that has been send to your email.</div>';
+            echo $this->template->content->message = "Invalid approach, please use the link that has been send to your email.";
         }
 
     }
@@ -298,9 +302,6 @@ class users_controller extends base_controller {
 
         // also from Post library file, to get all users so that they can be toggled for follow/unfollow
         $this->template->content->connections = Post::follow_unfollow($this->user->user_id);
-
-        # pass to view
-        $this->template->content->joined = $joined;
 
         # total number of grunts
         $q = "SELECT post_id FROM posts WHERE user_id = ".$this->user->user_id;
