@@ -73,3 +73,29 @@
     clear: both;
 }
 
+#plus_one {
+    margin: auto;
+    color: gray;
+    font-family:arial;
+    font-size: 2em;
+    line-height: 75px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    border: solid gray;
+}
+
+#plus_one:hover {
+    background-color: white;
+
+}
+
+#plus_one a
+{
+    text-decoration: none;
+    color:gray;
+    text-align: center;
+    margin-left:14px;
+}

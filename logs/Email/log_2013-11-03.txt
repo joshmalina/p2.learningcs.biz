@@ -1,0 +1,60 @@
+2013-11-03 11:36:31 - INFO --> -------------------------- 
+2013-11-03 11:36:31 - INFO --> Controller/Method: users/signup 
+2013-11-03 11:36:31 - INFO --> From: gruntr (info@p2.learningcs.biz) 
+2013-11-03 11:36:31 - INFO --> To: basketball (info@laoshilist.com),  
+2013-11-03 11:36:31 - INFO --> CC:  
+2013-11-03 11:36:31 - INFO --> BCC:  
+2013-11-03 11:36:31 - INFO --> Subject: Welcome to Gruntr 
+2013-11-03 11:36:31 - INFO --> Body: Hi basketball, thank you for signing up at Gruntr. You are almost finished!Please click the link below to confirm your registrationhttp://www.p2.learningcs.biz/users_signup_success.php?email=info@laoshilist.com&hash=e46de7e1bcaaced9a54f1e9d0d2f800d
+
+                 
+2013-11-03 11:39:52 - INFO --> -------------------------- 
+2013-11-03 11:39:52 - INFO --> Controller/Method: users/signup 
+2013-11-03 11:39:52 - INFO --> From: gruntr (info@p2.learningcs.biz) 
+2013-11-03 11:39:52 - INFO --> To: soccerball (info@laoshilist.com),  
+2013-11-03 11:39:52 - INFO --> CC:  
+2013-11-03 11:39:52 - INFO --> BCC:  
+2013-11-03 11:39:52 - INFO --> Subject: Welcome to Gruntr 
+2013-11-03 11:39:52 - INFO --> Body: Hi soccerball, thank you for signing up at Gruntr. You are almost finished! Please click the link below to confirm your registration p2.learningcs.biz/users/email_signup_success?email=info@laoshilist.com&hash=49ae49a23f67c759bf4fc791ba842aa2
+
+                 
+2013-11-03 11:42:11 - INFO --> -------------------------- 
+2013-11-03 11:42:11 - INFO --> Controller/Method: users/signup 
+2013-11-03 11:42:11 - INFO --> From: gruntr (info@p2.learningcs.biz) 
+2013-11-03 11:42:11 - INFO --> To: ronald (info@laoshilist.com),  
+2013-11-03 11:42:11 - INFO --> CC:  
+2013-11-03 11:42:11 - INFO --> BCC:  
+2013-11-03 11:42:11 - INFO --> Subject: Welcome to Gruntr 
+2013-11-03 11:42:11 - INFO --> Body: Hi ronald, thank you for signing up at Gruntr. You are almost finished! Please click the link below to confirm your registration p2.learningcs.biz/users/email_signup_verification?email=info@laoshilist.com&hash=85fc37b18c57097425b52fc7afbb6969
+
+                 
+2013-11-03 11:44:47 - INFO --> -------------------------- 
+2013-11-03 11:44:47 - INFO --> Controller/Method: users/signup 
+2013-11-03 11:44:47 - INFO --> From: gruntr (info@p2.learningcs.biz) 
+2013-11-03 11:44:47 - INFO --> To: hamacher (info@laoshilist.com),  
+2013-11-03 11:44:47 - INFO --> CC:  
+2013-11-03 11:44:47 - INFO --> BCC:  
+2013-11-03 11:44:47 - INFO --> Subject: Welcome to Gruntr 
+2013-11-03 11:44:47 - INFO --> Body: Hi hamacher, thank you for signing up at Gruntr. You are almost finished! Please click the link below to confirm your registration p2.learningcs.biz/users/email_signup_verification?email=info@laoshilist.com&hash=072b030ba126b2f4b2374f342be9ed44
+
+                 
+2013-11-03 12:19:43 - INFO --> -------------------------- 
+2013-11-03 12:19:43 - INFO --> Controller/Method: users/signup 
+2013-11-03 12:19:43 - INFO --> From: gruntr (info@p2.learningcs.biz) 
+2013-11-03 12:19:43 - INFO --> To: beatles (info@laoshilist.com),  
+2013-11-03 12:19:43 - INFO --> CC:  
+2013-11-03 12:19:43 - INFO --> BCC:  
+2013-11-03 12:19:43 - INFO --> Subject: Welcome to Gruntr 
+2013-11-03 12:19:43 - INFO --> Body: Hi beatles, thank you for signing up at Gruntr. You are almost finished! Please click the link below to confirm your registration p2.learningcs.biz/users/email_signup_verification?email=info@laoshilist.com&hash=e97ee2054defb209c35fe4dc94599061
+
+                 
+2013-11-03 12:20:24 - INFO --> -------------------------- 
+2013-11-03 12:20:24 - INFO --> Controller/Method: users/signup 
+2013-11-03 12:20:24 - INFO --> From: gruntr (info@p2.learningcs.biz) 
+2013-11-03 12:20:24 - INFO --> To: gerbels (joshuamalina@gmail.com),  
+2013-11-03 12:20:24 - INFO --> CC:  
+2013-11-03 12:20:24 - INFO --> BCC:  
+2013-11-03 12:20:24 - INFO --> Subject: Welcome to Gruntr 
+2013-11-03 12:20:24 - INFO --> Body: Hi gerbels, thank you for signing up at Gruntr. You are almost finished! Please click the link below to confirm your registration p2.learningcs.biz/users/email_signup_verification?email=joshuamalina@gmail.com&hash=1efa39bcaec6f3900149160693694536
+
+                 

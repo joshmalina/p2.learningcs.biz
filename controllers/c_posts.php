@@ -79,8 +79,6 @@
 
     }
 
-
-
     public function add() {
 
         # Setup view
@@ -130,7 +128,7 @@
         DB::instance(DB_NAME)->insert('users_users', $data);
 
         # Send them back
-        Router::redirect("/posts/users");
+        Router::redirect("/users/profile");
 
     }
 
@@ -141,7 +139,7 @@
         DB::instance(DB_NAME)->delete('users_users', $where_condition);
 
         # Send them back
-        Router::redirect("/posts/users");
+        Router::redirect("/users/profile");
 
     }
 }

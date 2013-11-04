@@ -14,7 +14,7 @@ If you want a different default time format for this app, set it below
 */
 
 # What is the name of this app?
-	define('APP_NAME', 'Short Message Fun Machine');
+	define('APP_NAME', 'gruntr');
 
 # When email is sent out from the server, where should it come from?
 # Ideally, this should match the domain name
@@ -38,9 +38,9 @@ A email designated to receive messages from the server. Examples:
 
 # If your app is going to have outgoing emails, you should fill in your SMTP settings
 # For this you could use gmail SMTP or something like http://sendgrid.com/
-	//define('SMTP_HOST', '');
-	//define('SMTP_USERNAME', '');
-	//define('SMTP_PASSWORD', '');
+	define('SMTP_HOST', 'smtp.gmail.com');
+	define('SMTP_USERNAME', "gruntr.service@gmail.com");
+	define('SMTP_PASSWORD', 'grunting');
 
 # For extra security, you might want to set different salts than what the core uses
 	define('PASSWORD_SALT', 'm*lBoD2rDhObkYUvkwte!d4EsGyABpg*pRz5dMHi');

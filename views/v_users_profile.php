@@ -2,9 +2,7 @@
     <div class = "left">
         <div id = "left_top">
             I am <?=$user->first_name?>.<br>
-            I have been grunting since <?=$joined?>.<br>
-            I have grunted <?=$post_num?> many times.<br>
-            I follow x, y, and z.<br>
+            I have grunted <?=$post_num?> times.<br>
         </div>
         <div id = "left_mid">
             <!-- toggle follow/unfollow -->

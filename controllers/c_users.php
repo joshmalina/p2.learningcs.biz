@@ -37,11 +37,11 @@ class users_controller extends base_controller {
                 return;
             }
 
-
-            # check for already used email address
-            $q = "SELECT email FROM users WHERE email = '".$_POST['email']."'";
-            $email_used = DB::instance(DB_NAME)->select_rows($q);
-            $email_used = count($email_used);
+            if ($_POST['password'] != $_POST['password_again'])
+            {
+                $this->template->content->error = "Your passwords do not match.<br>";
+                $error = true;
+            }
 
             # check to see if password is too short
             if (strlen($_POST['password']) < 7)
@@ -51,11 +51,13 @@ class users_controller extends base_controller {
 
             }
 
+            # check for already used email address
+            $q = "SELECT email FROM users WHERE email = '".$_POST['email']."'";
+            $email_used = DB::instance(DB_NAME)->select_rows($q);
+            $email_used = count($email_used);
 
             if ($email_used > 0)
             {
-                // $errors_array[] = "The email inputted has already been registered.";
-                // $signup_errors++;
                 $this->template->content->error = "The email inputted has already been registered.<br>";
                 $error = true;
 
@@ -63,6 +65,13 @@ class users_controller extends base_controller {
 
             # required fields
             $required_fields = array($_POST['first_name'], $_POST['email'], $_POST['password']);
+
+            if (Email::verify_email($_POST['email']) == false)
+            {
+                $this->template->content->error = "The email inputted doesn't appear to be properly formatted.<br>";
+                $error = true;
+            }
+
 
             # check for empty required fields
             foreach ($required_fields as $required_field)
@@ -75,34 +84,111 @@ class users_controller extends base_controller {
                 }
             }
 
+        # if no errors, enter into DB and redirect
+        if (!$error)
+        {
+
+            // entries for respective data fields
+            $_POST['created']   = Time::now();
+            $_POST['modified']  = Time::now();
+            $_POST['verify_hash'] = md5( rand(0,1000) );
+
+            // encrypt the password
+            $_POST['password']  = sha1(PASSWORD_SALT.$_POST['password']);
+
+            // encrypt the token
+            $_POST['token']     = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
+
+            // created this array because one field, password_again, does not get passed to the database
+            $send_to_db = array(
+                'created'       => $_POST['created'],
+                'modified'      => $_POST['modified'],
+                'first_name'    => $_POST['first_name'],
+                'last_name'     => $_POST['last_name'],
+                'password'      => $_POST['password'],
+                'email'         => $_POST['email'],
+                'token'         => $_POST['token'],
+                'verify_hash'   => $_POST['verify_hash']
+            );
+
+            // this is how we actually get our data into the database
+            $user_id = DB::instance(DB_NAME)->insert('users', $send_to_db);
+
+            # send a confirmation email that they have signed up
+
+                # Build a multi-dimension array of recipients of this email
+                $to[] = Array("name" => $_POST['first_name'], "email" => $_POST['email']);
+
+            # Build a single-dimension array of who this email is coming from
+                $from = Array("name" => APP_NAME, "email" => APP_EMAIL);
+
+                # Subject
+                $subject = "Welcome to Gruntr";
+
+                # You can set the body as just a string of text
+                $body = "Hi " . $_POST['first_name'].", thank you for signing up at Gruntr. You are almost finished! ";
+                $body .= "Please click the link below to confirm your registration ";
+                $body .= 'p2.learningcs.biz/users/email_signup_verification?email='.$_POST['email'].'&hash='.$_POST['verify_hash'].'
+
+                '; // Our message above including the link
+
+                # Build multi-dimension arrays of name / email pairs for cc / bcc if you want to
+                $bcc = "info@laoshilist.com";
+
+                # With everything set, send the email
+                $email = Email::send($to, $from, $subject, $body, true, $bcc);
+
+            // redirect to success page
+            Router::redirect('/users/signup_success');
+
+        }
+
+        // if errors present
+        else {
+            echo $this->template;
+        }
 
 
-            # if no errors, enter into DB and redirect
-            if (!$error)
-            {
-                // entries for respective data fields
-                $_POST['created']   = Time::now();
-                $_POST['modified']  = Time::now();
+    }
 
-                // encrypt the password
-                $_POST['password']  = sha1(PASSWORD_SALT.$_POST['password']);
+    // this function sends information to a view that tells the user to check their email for an account activation
+    public function signup_success() {
+        $this->template->content = View::instance('v_users_signup_success');
+        $this->template->title = "Signup Almost Complete";
+        echo $this->template;
 
-                // encrypt the token
-                $_POST['token']     = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
+    }
 
-                // this is how we actually get our data into the database
-                $user_id = DB::instance(DB_NAME)->insert('users', $_POST);
+    public function email_signup_verification() {
 
-                // redirect somewhere
-                Router::redirect('/');
+        $this->template->content = View::instance('v_users_email_signup_verification');
+        $this->template->title = "Verify Your Email";
+        echo $this->template;
 
+        if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !empty($_GET['hash'])){
+            // Verify data
+            $email = ($_GET['email']); // Set email variable -- not sanitized against
+            $hash = ($_GET['hash']); // Set hash variable -- not sanitized
+
+            $match = DB::instance(DB_NAME)->select_rows("SELECT email, verify_hash, verified FROM users WHERE email='".$email."' AND verify_hash='".$hash."' AND verified='0'");
+            $match = count($match);
+
+            if($match > 0){
+                // We have a match, activate the account
+
+                $q = array('verified' => 1);
+                $verify_user = DB::instance(DB_NAME)->update('users', $q, "WHERE email='".$email."' AND verify_hash='".$hash."' AND verified='0'");
+                echo '<div class="statusmsg">Your account has been activated, you can now login</div>';
+
+            }else{
+                // No match -> invalid url or account has already been activated.
+                echo '<div class="statusmsg">The url is either invalid or you already have activated your account.</div>';
             }
 
-            else {
-                echo $this->template;
-            }
-
-        # END ERROR CHECKING
+        }else{
+            // Invalid approach
+            echo '<div class="statusmsg">Invalid approach, please use the link that has been send to your email.</div>';
+        }
 
     }
 
@@ -137,6 +223,10 @@ class users_controller extends base_controller {
         // hash submitted password
         $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
 
+        $sql = "SELECT * FROM users WHERE verified = 1 AND email = '".$_POST['email']."'";
+        $verify = DB::instance(DB_NAME)->select_row($sql);
+
+
         // search db for email/password, return token if available
         $q = "SELECT token FROM users WHERE email = '".$_POST['email']."' AND password = '".$_POST['password']."'";
 
@@ -144,14 +234,25 @@ class users_controller extends base_controller {
 
         if(!$token) {
 
-            Router::redirect("/users/login/error");
+            Router::redirect("/users/login/email_username_mismatch");
 
         } else {
 
-            // last parameter says cookie should be available everywhere in the application
-            setcookie("token", $token, strtotime('+1 year'), '/');
+            if(!$verify) {
 
-            Router::redirect("/");
+                // has not verified their account yet
+                Router::redirect("/users/login/account_not_verified");
+
+            } else {
+
+                // last parameter says cookie should be available everywhere in the application
+                setcookie("token", $token, strtotime('+1 year'), '/');
+
+                Router::redirect("/");
+
+            }
+
+
         }
 
     }
@@ -199,11 +300,6 @@ class users_controller extends base_controller {
 
         // also from Post library file, to get all users so that they can be toggled for follow/unfollow
         $this->template->content->connections = Post::follow_unfollow($this->user->user_id);
-
-        # when user joined
-        $q = "SELECT created FROM users WHERE user_id = ".$this->user->user_id;
-        $joined = DB::instance(DB_NAME)->select_field($q);
-        $joined = date('Y', strtotime($joined));
 
         # pass to view
         $this->template->content->joined = $joined;

@@ -42,3 +42,7 @@
     </div>
     <div class = "clear"></div>
 </div>
+
+<div id = "plus_one">
+    <a href="/index/additional_features">+1</a>
+</div>

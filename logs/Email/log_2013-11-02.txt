@@ -1,0 +1,219 @@
+2013-11-02 18:00:54 - INFO --> -------------------------- 
+2013-11-02 18:00:54 - INFO --> Controller/Method: users/signup 
+2013-11-02 18:00:54 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY info@p2.learningcs.biz 
+2013-11-02 18:00:54 - INFO --> From: Short Message Fun Machine (info@p2.learningcs.biz) 
+2013-11-02 18:00:54 - INFO --> To: dogs dogs (dogsdogs),  
+2013-11-02 18:00:54 - INFO --> CC:  
+2013-11-02 18:00:54 - INFO --> BCC:  
+2013-11-02 18:00:54 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 18:00:54 - INFO --> Body: Hi dogs, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 18:14:42 - INFO --> -------------------------- 
+2013-11-02 18:14:42 - INFO --> Controller/Method: users/signup 
+2013-11-02 18:14:42 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY info@p2.learningcs.biz 
+2013-11-02 18:14:42 - INFO --> From: Short Message Fun Machine (info@p2.learningcs.biz) 
+2013-11-02 18:14:42 - INFO --> To: abcsd abcsd (abcsd),  
+2013-11-02 18:14:42 - INFO --> CC:  
+2013-11-02 18:14:42 - INFO --> BCC:  
+2013-11-02 18:14:42 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 18:14:42 - INFO --> Body: Hi abcsd, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 18:15:19 - INFO --> -------------------------- 
+2013-11-02 18:15:19 - INFO --> Controller/Method: users/signup 
+2013-11-02 18:15:19 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY info@p2.learningcs.biz 
+2013-11-02 18:15:19 - INFO --> From: Short Message Fun Machine (info@p2.learningcs.biz) 
+2013-11-02 18:15:19 - INFO --> To: abcsddd abcsddd (abcsddd),  
+2013-11-02 18:15:19 - INFO --> CC:  
+2013-11-02 18:15:19 - INFO --> BCC:  
+2013-11-02 18:15:19 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 18:15:19 - INFO --> Body: Hi abcsddd, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 18:18:10 - INFO --> -------------------------- 
+2013-11-02 18:18:10 - INFO --> Controller/Method: users/signup 
+2013-11-02 18:18:10 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY info@p2.learningcs.biz 
+2013-11-02 18:18:10 - INFO --> From: Short Message Fun Machine (info@p2.learningcs.biz) 
+2013-11-02 18:18:10 - INFO --> To: <br /><b>Notice</b>:  Undefined index: first_name in <b>/Users/J/Sites/p2.learningcs.biz/views/v_users_signup.php</b> on line <b>10</b><br /> <br /><b>Notice</b>:  Undefined index: last_name in <b>/Users/J/Sites/p2.learningcs.biz/views/v_users_signup.php</b> on line <b>14</b><br /> (<br /><b>Notice</b>:  Undefined index: email in <b>/Users/J/Sites/p2.learningcs.biz/views/v_users_signup.php</b> on line <b>18</b><br />),  
+2013-11-02 18:18:10 - INFO --> CC:  
+2013-11-02 18:18:10 - INFO --> BCC:  
+2013-11-02 18:18:10 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 18:18:10 - INFO --> Body: Hi <br /><b>Notice</b>:  Undefined index: first_name in <b>/Users/J/Sites/p2.learningcs.biz/views/v_users_signup.php</b> on line <b>10</b><br />, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 18:18:19 - INFO --> -------------------------- 
+2013-11-02 18:18:19 - INFO --> Controller/Method: users/signup 
+2013-11-02 18:18:19 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY info@p2.learningcs.biz 
+2013-11-02 18:18:19 - INFO --> From: Short Message Fun Machine (info@p2.learningcs.biz) 
+2013-11-02 18:18:19 - INFO --> To: oasdfonad oasdfonad (oasdfonad),  
+2013-11-02 18:18:19 - INFO --> CC:  
+2013-11-02 18:18:19 - INFO --> BCC:  
+2013-11-02 18:18:19 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 18:18:19 - INFO --> Body: Hi oasdfonad, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 18:26:42 - INFO --> -------------------------- 
+2013-11-02 18:26:42 - INFO --> Controller/Method: users/signup 
+2013-11-02 18:26:42 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY info@p2.learningcs.biz 
+2013-11-02 18:26:42 - INFO --> From: Short Message Fun Machine (info@p2.learningcs.biz) 
+2013-11-02 18:26:42 - INFO --> To: oasdfija oasdfija (oasdfija),  
+2013-11-02 18:26:42 - INFO --> CC:  
+2013-11-02 18:26:42 - INFO --> BCC:  
+2013-11-02 18:26:42 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 18:26:42 - INFO --> Body: Hi oasdfija, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 18:27:20 - INFO --> -------------------------- 
+2013-11-02 18:27:20 - INFO --> Controller/Method: users/signup 
+2013-11-02 18:27:20 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY info@p2.learningcs.biz 
+2013-11-02 18:27:20 - INFO --> From: Short Message Fun Machine (info@p2.learningcs.biz) 
+2013-11-02 18:27:20 - INFO --> To: oasdfija3 oasdfija3 (oasdfija3),  
+2013-11-02 18:27:20 - INFO --> CC:  
+2013-11-02 18:27:20 - INFO --> BCC:  
+2013-11-02 18:27:20 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 18:27:20 - INFO --> Body: Hi oasdfija3, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 18:27:45 - INFO --> -------------------------- 
+2013-11-02 18:27:45 - INFO --> Controller/Method: users/signup 
+2013-11-02 18:27:45 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY info@p2.learningcs.biz 
+2013-11-02 18:27:45 - INFO --> From: Short Message Fun Machine (info@p2.learningcs.biz) 
+2013-11-02 18:27:45 - INFO --> To: kamsdofma kamsdofma (kamsdofma),  
+2013-11-02 18:27:45 - INFO --> CC:  
+2013-11-02 18:27:45 - INFO --> BCC:  
+2013-11-02 18:27:45 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 18:27:45 - INFO --> Body: Hi kamsdofma, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 18:28:15 - INFO --> -------------------------- 
+2013-11-02 18:28:15 - INFO --> Controller/Method: users/signup 
+2013-11-02 18:28:15 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY info@p2.learningcs.biz 
+2013-11-02 18:28:15 - INFO --> From: Short Message Fun Machine (info@p2.learningcs.biz) 
+2013-11-02 18:28:15 - INFO --> To: dasdfasdf dasdfasdf (dasdfasdf),  
+2013-11-02 18:28:15 - INFO --> CC:  
+2013-11-02 18:28:15 - INFO --> BCC:  
+2013-11-02 18:28:15 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 18:28:15 - INFO --> Body: Hi dasdfasdf, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 21:29:27 - INFO --> -------------------------- 
+2013-11-02 21:29:27 - INFO --> Controller/Method: users/signup 
+2013-11-02 21:29:27 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY info@p2.learningcs.biz 
+2013-11-02 21:29:27 - INFO --> From: Short Message Fun Machine (info@p2.learningcs.biz) 
+2013-11-02 21:29:27 - INFO --> To: basketball (basketball),  
+2013-11-02 21:29:27 - INFO --> CC:  
+2013-11-02 21:29:27 - INFO --> BCC:  
+2013-11-02 21:29:27 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 21:29:27 - INFO --> Body: Hi basketball, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 21:55:48 - INFO --> -------------------------- 
+2013-11-02 21:55:48 - INFO --> Controller/Method: users/signup 
+2013-11-02 21:55:48 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY info@p2.learningcs.biz 
+2013-11-02 21:55:48 - INFO --> From: Short Message Fun Machine (info@p2.learningcs.biz) 
+2013-11-02 21:55:48 - INFO --> To: hotdogs (hotdogs@hotdogs.com),  
+2013-11-02 21:55:48 - INFO --> CC:  
+2013-11-02 21:55:48 - INFO --> BCC:  
+2013-11-02 21:55:48 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 21:55:48 - INFO --> Body: Hi hotdogs, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 22:22:17 - INFO --> -------------------------- 
+2013-11-02 22:22:17 - INFO --> Controller/Method: users/signup 
+2013-11-02 22:22:17 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY info@p2.learningcs.biz 
+2013-11-02 22:22:17 - INFO --> From: Short Message Fun Machine (info@p2.learningcs.biz) 
+2013-11-02 22:22:17 - INFO --> To: bradley (joshua.malina@yahoo.com),  
+2013-11-02 22:22:17 - INFO --> CC:  
+2013-11-02 22:22:17 - INFO --> BCC:  
+2013-11-02 22:22:17 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 22:22:17 - INFO --> Body: Hi bradley, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 22:27:18 - INFO --> -------------------------- 
+2013-11-02 22:27:18 - INFO --> Controller/Method: users/signup 
+2013-11-02 22:27:18 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY info@p2.learningcs.biz 
+2013-11-02 22:27:18 - INFO --> From: gruntr (info@p2.learningcs.biz) 
+2013-11-02 22:27:18 - INFO --> To: randy (joshuamalina@gmail.com),  
+2013-11-02 22:27:18 - INFO --> CC:  
+2013-11-02 22:27:18 - INFO --> BCC:  
+2013-11-02 22:27:18 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 22:27:18 - INFO --> Body: Hi randy, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 22:29:27 - INFO --> -------------------------- 
+2013-11-02 22:29:27 - INFO --> Controller/Method: users/signup 
+2013-11-02 22:29:27 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY info@p2.learningcs.biz 
+2013-11-02 22:29:27 - INFO --> From: gruntr (info@p2.learningcs.biz) 
+2013-11-02 22:29:27 - INFO --> To:  
+2013-11-02 22:29:27 - INFO --> CC:  
+2013-11-02 22:29:27 - INFO --> BCC:  
+2013-11-02 22:29:27 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 22:29:27 - INFO --> Body: Hi jdoafijao, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 22:31:58 - INFO --> -------------------------- 
+2013-11-02 22:31:58 - INFO --> Controller/Method: users/signup 
+2013-11-02 22:31:58 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY info@p2.learningcs.biz 
+2013-11-02 22:31:58 - INFO --> From: gruntr (info@p2.learningcs.biz) 
+2013-11-02 22:31:58 - INFO --> To:  
+2013-11-02 22:31:58 - INFO --> CC:  
+2013-11-02 22:31:58 - INFO --> BCC:  
+2013-11-02 22:31:58 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 22:31:58 - INFO --> Body: Hi jdoafijao, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 22:35:32 - INFO --> -------------------------- 
+2013-11-02 22:35:32 - INFO --> Controller/Method: users/signup 
+2013-11-02 22:35:32 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY info@p2.learningcs.biz 
+2013-11-02 22:35:32 - INFO --> From: gruntr (info@p2.learningcs.biz) 
+2013-11-02 22:35:32 - INFO --> To:  
+2013-11-02 22:35:32 - INFO --> CC:  
+2013-11-02 22:35:32 - INFO --> BCC:  
+2013-11-02 22:35:32 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 22:35:32 - INFO --> Body: Hi owijfpaiojdf, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 22:38:06 - INFO --> -------------------------- 
+2013-11-02 22:38:06 - INFO --> Controller/Method: users/signup 
+2013-11-02 22:38:06 - INFO --> From: gruntr (info@p2.learningcs.biz) 
+2013-11-02 22:38:06 - INFO --> To:  
+2013-11-02 22:38:06 - INFO --> CC:  
+2013-11-02 22:38:06 - INFO --> BCC:  
+2013-11-02 22:38:06 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 22:38:06 - INFO --> Body: Hi lemong12, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 22:38:06 - INFO --> FAILED TO SEND EMAIL 
+2013-11-02 22:39:29 - INFO --> -------------------------- 
+2013-11-02 22:39:29 - INFO --> Controller/Method: users/signup 
+2013-11-02 22:39:29 - INFO --> From: gruntr (info@p2.learningcs.biz) 
+2013-11-02 22:39:29 - INFO --> To: foasodfija (joshua.malina@yahoo.com),  
+2013-11-02 22:39:29 - INFO --> CC:  
+2013-11-02 22:39:29 - INFO --> BCC:  
+2013-11-02 22:39:29 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 22:39:29 - INFO --> Body: Hi foasodfija, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 22:40:32 - INFO --> -------------------------- 
+2013-11-02 22:40:32 - INFO --> Controller/Method: users/signup 
+2013-11-02 22:40:32 - INFO --> From: gruntr (info@p2.learningcs.biz) 
+2013-11-02 22:40:32 - INFO --> To: foasodfija (info@laoshilist.com),  
+2013-11-02 22:40:32 - INFO --> CC:  
+2013-11-02 22:40:32 - INFO --> BCC:  
+2013-11-02 22:40:32 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 22:40:32 - INFO --> Body: Hi foasodfija, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 22:42:23 - INFO --> -------------------------- 
+2013-11-02 22:42:23 - INFO --> Controller/Method: users/signup 
+2013-11-02 22:42:23 - INFO --> From: gruntr (info@p2.learningcs.biz) 
+2013-11-02 22:42:23 - INFO --> To: odijfaopsidjf (info@pekingmagic.com),  
+2013-11-02 22:42:23 - INFO --> CC:  
+2013-11-02 22:42:23 - INFO --> BCC:  
+2013-11-02 22:42:23 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 22:42:23 - INFO --> Body: Hi odijfaopsidjf, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 22:43:39 - INFO --> -------------------------- 
+2013-11-02 22:43:39 - INFO --> Controller/Method: users/signup 
+2013-11-02 22:43:39 - INFO --> OUTGOING EMAILS ARE DISABLED. THIS EMAIL WAS NOT SENT TO THE RECIPIENTS, ONLY info@p2.learningcs.biz 
+2013-11-02 22:43:39 - INFO --> From: gruntr (info@p2.learningcs.biz) 
+2013-11-02 22:43:39 - INFO --> To: odijfaopsidjf (joshuamalina@gmail.com),  
+2013-11-02 22:43:39 - INFO --> CC:  
+2013-11-02 22:43:39 - INFO --> BCC:  
+2013-11-02 22:43:39 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 22:43:39 - INFO --> Body: Hi odijfaopsidjf, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 22:45:05 - INFO --> -------------------------- 
+2013-11-02 22:45:05 - INFO --> Controller/Method: users/signup 
+2013-11-02 22:45:05 - INFO --> From: gruntr (info@p2.learningcs.biz) 
+2013-11-02 22:45:05 - INFO --> To: odijfaopsidjf (joshua.malina@yahoo.com),  
+2013-11-02 22:45:05 - INFO --> CC:  
+2013-11-02 22:45:05 - INFO --> BCC:  
+2013-11-02 22:45:05 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 22:45:05 - INFO --> Body: Hi odijfaopsidjf, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 22:46:27 - INFO --> -------------------------- 
+2013-11-02 22:46:27 - INFO --> Controller/Method: users/signup 
+2013-11-02 22:46:27 - INFO --> From: gruntr (info@p2.learningcs.biz) 
+2013-11-02 22:46:27 - INFO --> To: dofjnao (info@laoshilist.com),  
+2013-11-02 22:46:27 - INFO --> CC:  
+2013-11-02 22:46:27 - INFO --> BCC:  
+2013-11-02 22:46:27 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 22:46:27 - INFO --> Body: Hi dofjnao, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 22:46:27 - INFO --> FAILED TO SEND EMAIL 
+2013-11-02 22:52:17 - INFO --> -------------------------- 
+2013-11-02 22:52:17 - INFO --> Controller/Method: users/signup 
+2013-11-02 22:52:17 - INFO --> From: gruntr (info@p2.learningcs.biz) 
+2013-11-02 22:52:17 - INFO --> To: joshuamalina@gmail.com (joshuamalina@gmail.com),  
+2013-11-02 22:52:17 - INFO --> CC:  
+2013-11-02 22:52:17 - INFO --> BCC:  
+2013-11-02 22:52:17 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 22:52:17 - INFO --> Body: Hi joshuamalina@gmail.com, this is just a message to confirm your registration at Gruntr. Thanks for joining! 
+2013-11-02 23:47:24 - INFO --> -------------------------- 
+2013-11-02 23:47:24 - INFO --> Controller/Method: users/signup 
+2013-11-02 23:47:24 - INFO --> From: gruntr (info@p2.learningcs.biz) 
+2013-11-02 23:47:24 - INFO --> To: posdmkfpam (posdmkfpam@posdmkfpam.com),  
+2013-11-02 23:47:24 - INFO --> CC:  
+2013-11-02 23:47:24 - INFO --> BCC:  
+2013-11-02 23:47:24 - INFO --> Subject: Welcome to Gruntr 
+2013-11-02 23:47:24 - INFO --> Body: Hi posdmkfpam, this is just a message to confirm your registration at Gruntr. Thanks for joining! 

@@ -24,12 +24,13 @@ body {
 
 /* profile info box */
 #left_top {
+    font-size: 1em;
 
 }
 
 /* follow toggle */
 #left_mid {
-    font-size: 1em;
+    font-size: .7em;
 
 
 
