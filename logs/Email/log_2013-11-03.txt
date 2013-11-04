@@ -68,3 +68,13 @@
 2013-11-03 20:46:09 - INFO --> Body: Hi Ronald, thank you for signing up at Gruntr. You are almost finished! Please click the link below to confirm your registration p2.learningcs.biz/users/email_signup_verification?email=info@laosfhilist.com&hash=55b37c5c270e5d84c793e486d798c01d
 
                  
+2013-11-03 20:50:53 - INFO --> -------------------------- 
+2013-11-03 20:50:53 - INFO --> Controller/Method: users/signup 
+2013-11-03 20:50:53 - INFO --> From: gruntr (info@p2.learningcs.biz) 
+2013-11-03 20:50:53 - INFO --> To: rand (j54@fd.com),  
+2013-11-03 20:50:53 - INFO --> CC:  
+2013-11-03 20:50:53 - INFO --> BCC:  
+2013-11-03 20:50:53 - INFO --> Subject: Welcome to Gruntr 
+2013-11-03 20:50:53 - INFO --> Body: Hi rand, thank you for signing up at Gruntr. You are almost finished! Please click the link below to confirm your registration p2.learningcs.biz/users/email_signup_verification?email=j54@fd.com&hash=ad61ab143223efbc24c7d2583be69251
+
+                 

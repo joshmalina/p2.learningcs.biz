@@ -66,7 +66,7 @@ class users_controller extends base_controller {
             # required fields
             $required_fields = array($_POST['first_name'], $_POST['email'], $_POST['password']);
 
-            if (Email::verify_email($_POST['email']) == false)
+            if (users_controller::verify_email($_POST['email']) == false)
             {
                 $this->template->content->error = "The email inputted doesn't appear to be properly formatted.<br>";
                 $error = true;
